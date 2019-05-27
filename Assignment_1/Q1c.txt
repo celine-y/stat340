@@ -1,0 +1,2 @@
+1. Is a closer simulation to how it would occur in real life.
+2. Is easier to understand because there is no fancy math involved.
