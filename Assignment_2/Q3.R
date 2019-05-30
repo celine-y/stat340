@@ -12,7 +12,7 @@ print(ei)
 d = sum(((ei-shifts)^2)/ei)
 
 print(d)
-p = 1- pnorm(d)
+p = 1- pchisq(d, 3)
 print(p)
 
-print(paste("Since p =", p, ", we have tons of evidence to reject H0"))
+print(paste("Since p =", p, ", we have no evidence to reject H0"))
