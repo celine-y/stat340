@@ -1,32 +1,26 @@
 # Assignment 2, Question 1
 datai <- read.csv(file="A2_dataseti.csv", header=TRUE)
-dataiii <- read.csv(file="A2_datasetiii.csv", header=TRUE)
 
-discrepancy = function(cdf_x, data){
-  # cdf_x = CDF function
+hist(datai$x)
+data = sort(datai$x)
+n = length(xs)
+l_est = 1/mean(xs)
+l_est
+
+discrepancy = function(data){
   # data = dataset
   n = length(data)
   
   F_u = c(1:n)/n
   F_l = F_u - 1/n
-  Fu_diff = abs(cdf_x(data) - F_u)
-  Fl_diff = abs(cdf_x(data) - F_l)
+  Fu_diff = abs(pexp(data, l_est) - F_u)
+  Fl_diff = abs(pexp(data, l_est) - F_l)
   
   diff = c(Fu_diff, Fl_diff)
   return (max(diff))
 }
 
-# Code specifically for dataset i
-hist(datai$x)
-xs = datai$x
-n = length(xs)
-l_est = 1/mean(xs)
-# Predicted Distribution
-F_x = function(x){
-  return(pexp(x, l_est))
-}
-
-d = discrepancy(F_x, xs)
+d = discrepancy(data)
 d
 
 KS = function(d, n, m, l) {
@@ -50,14 +44,9 @@ KS = function(d, n, m, l) {
   }
   
   # p-value
-  print(ddots)
   p = length(ddots[ddots > d])/m
   return(p)
 }
 
 p = KS(d, n, 10000, l_est)
 p
-
-
-
-# hist(dataiii$x)
