@@ -1,3 +1,9 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+```{r}
 dataii <- read.csv(file="A2_datasetii.csv", header=TRUE)
 
 # Code specifically for dataset ii
@@ -45,5 +51,6 @@ KS = function(d, n, m, a, b) {
   return(p)
 }
 
-p = KS(d, n, 10000, mu, sigma)
+p = KS(d, n, 10000, a, b)
 p
+```

@@ -1,4 +1,9 @@
-# Assignment 2, Question 1
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+```{r}
 datai <- read.csv(file="A2_dataseti.csv", header=TRUE)
 
 hist(datai$x)
@@ -50,3 +55,4 @@ KS = function(d, n, m, l) {
 
 p = KS(d, n, 10000, l_est)
 p
+```

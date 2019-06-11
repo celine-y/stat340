@@ -1,3 +1,9 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+```{r}
 # Assignment 2, Question 2
 data = c(0.415, 0.417, 0.423, 0.478, 0.479,
         0.482, 0.523, 0.591, 0.717, 1.196,
@@ -49,3 +55,4 @@ pval = function(d, k) {
 
 p = pval(d, 2)
 p
+```

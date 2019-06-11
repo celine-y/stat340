@@ -1,3 +1,9 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+```{r}
 dataiii <- read.csv(file="A2_datasetiii.csv", header=TRUE)
 
 data = sort(dataiii$x)
@@ -46,3 +52,4 @@ KS = function(n, d, m, mu, sigma){
 
 p = KS(n, d, 1000, mu, sigma)
 p
+```
